@@ -23,7 +23,11 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-
+      if @@items.include?(search_term)
+        resp.write "added Figs"
+      else
+        resp.write "We don't have that item"
+      end
     else
       resp.write "Path Not Found"
     end
